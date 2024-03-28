@@ -15,7 +15,7 @@ public static class UserInterface
         string stuName = GetValidString("Enter Student name:", minLength: 1, maxLength: 50);
         string stuMajor = GetValidString("Enter Student major:", minLength: 1, maxLength: 50);
         decimal stuGPA = GetValidDecimal("Enter student GPA (X.XX)", minVal: 0.0m, maxVal: 4.0m);
-        long StudentID = DateTime.UnixEpoch.Ticks; //Unique StudentID
+        long StudentID = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(); //Unique StudentID
         // below is an example of storing the student name
         StudentNames[StudentID] = stuName;
         // TODO1: Add steps to store the major and GPA
